@@ -1,0 +1,20 @@
+<div class="table-container">
+  <button mat-raised-button color="accent" (click)="AddTeacher()">Add Teachers</button>
+ <h2>Teachers Table</h2>
+
+  <table mat-table [dataSource]="teachers" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let teacher"> {{ teacher.id }} </td>
+    </ng-container>
+    <ng-container matColumnDef="teacherName">
+      <th mat-header-cell *matHeaderCellDef> Teacher Name </th>
+      <td mat-cell *matCellDef="let teacher"> {{ teacher.teacherName }} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
